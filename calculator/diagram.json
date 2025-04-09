@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Théo Pomies",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-c3-devkitm-1",
+      "id": "esp",
+      "top": -153.9,
+      "left": -61.38,
+      "attrs": { "builder": "rust-nostd-esp" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -549.2,
+      "left": -148,
+      "attrs": {
+        "keys": [ "1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "*", "C", "0", "=", "/" ]
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:0", "keypad1:R1", "green", [ "h-105.6", "v-153.6" ] ],
+    [ "esp:1", "keypad1:R2", "green", [ "h-96", "v-153.6", "h115.6" ] ],
+    [ "esp:2", "keypad1:R3", "green", [ "h-86.4", "v-86.4", "h115.5" ] ],
+    [ "esp:3", "keypad1:R4", "green", [ "h-76.8", "v-86.4", "h115.4" ] ],
+    [ "esp:4", "keypad1:C1", "green", [ "h64.78", "v-144", "h-105.5" ] ],
+    [ "esp:5", "keypad1:C2", "green", [ "h74.38", "v-144", "h-105.6" ] ],
+    [ "esp:6", "keypad1:C3", "green", [ "h83.98", "v-144", "h-105.45" ] ],
+    [ "esp:7", "keypad1:C4", "green", [ "h93.58", "v-144" ] ]
+  ],
+  "serialMonitor": { "display": "terminal", "convertEol": true },
+  "dependencies": {}
+}

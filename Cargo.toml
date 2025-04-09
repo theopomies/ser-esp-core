@@ -1,0 +1,24 @@
+[workspace]
+resolver = "2"
+members = [
+  "blinky",
+  "button-controlled-blinky",
+  "button-counter",
+  "calculator",
+  "simple-voltmeter",
+  "temperature-sensing",
+  "temperature-sensing-led-row"
+]
+
+[workspace.dependencies]
+esp-hal = { version = "0.23.1", features = ["esp32c3"] }
+esp-backtrace = { version = "0.15.0", features = [
+    "esp32c3",
+    "panic-handler",
+    "println",
+] }
+esp-println = { version = "0.13.0", features = ["esp32c3", "log"] }
+log = { version = "0.4.22" }
+critical-section = { version = "1.2.0" }
+nb = { version = "1.1.0" }
+libm = { version = "0.2.11" }

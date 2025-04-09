@@ -1,0 +1,17 @@
+[package]
+name = "blinky"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "blinky"
+path = "src/main.rs"
+test = false
+doctest = false
+bench = false
+
+[dependencies]
+esp-hal = { workspace = true }
+esp-backtrace = { workspace = true }
+esp-println = { workspace = true }
+log = { workspace = true }

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "author": "Théo Pomies",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-c3-devkitm-1",
+      "id": "esp",
+      "top": -153.9,
+      "left": -61.38,
+      "attrs": { "builder": "rust-nostd-esp" }
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -333.4,
+      "left": -202.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": -331.2,
+      "left": 148.8,
+      "attrs": { "color": "GYR" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.1", "ntc1:GND", "black", [ "v0" ] ],
+    [ "esp:3V3.1", "ntc1:VCC", "red", [ "h-9.6", "v-76.8" ] ],
+    [ "esp:0", "ntc1:OUT", "green", [ "h-19.2", "v-134.4" ] ],
+    [ "esp:1", "bargraph1:A1", "green", [ "h-28.8", "v-115.2", "h201.6" ] ],
+    [ "esp:2", "bargraph1:A2", "green", [ "v19.2", "h153.6", "v-230.4" ] ],
+    [ "esp:3", "bargraph1:A3", "green", [ "h19.2", "v19.2" ] ],
+    [ "esp:4", "bargraph1:A4", "green", [ "h35.98", "v-28.8" ] ],
+    [ "esp:5", "bargraph1:A5", "green", [ "h16.78", "v-9.59" ] ],
+    [ "esp:6", "bargraph1:A6", "green", [ "h-12.02", "v28.8", "h86.4", "v-19.19" ] ],
+    [ "esp:7", "bargraph1:A7", "green", [ "h-21.62", "v48", "h105.6", "v-249.59" ] ],
+    [ "esp:8", "bargraph1:A8", "green", [ "h93.58", "v-172.79" ] ],
+    [ "esp:9", "bargraph1:A9", "green", [ "h103.18", "v-153.59" ] ],
+    [ "esp:10", "bargraph1:A10", "green", [ "h-9.6", "v57.6", "h211.2", "v-259.19" ] ],
+    [ "esp:GND.10", "bargraph1:C1", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C2", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C3", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C4", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C5", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C6", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C7", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C8", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C9", "black", [ "h0" ] ],
+    [ "esp:GND.10", "bargraph1:C10", "black", [ "h0" ] ]
+  ],
+  "serialMonitor": { "display": "terminal", "convertEol": true },
+  "dependencies": {}
+}
