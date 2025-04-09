@@ -883,7 +883,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "temperature-sensing-led-row"
+name = "temperature-sensing-led-bar"
 version = "0.1.0"
 dependencies = [
  "esp-backtrace",

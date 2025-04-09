@@ -7,7 +7,7 @@ members = [
   "calculator",
   "simple-voltmeter",
   "temperature-sensing",
-  "temperature-sensing-led-row"
+  "temperature-sensing-led-bar"
 ]
 
 [workspace.dependencies]
